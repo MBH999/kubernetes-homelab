@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: cilium
         namespace: kube-system
-  values:
-    kubeProxyReplacement: "partial"
-    hubble:
-      enabled: false
+
+  valuesFrom:
+    - kind: ConfigMap
+      name: cilium-values
