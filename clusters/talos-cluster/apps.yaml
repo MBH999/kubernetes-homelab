@@ -14,4 +14,3 @@ spec:
     name: repo
   dependsOn:
     - name: infra
-  targetNamespace: web
