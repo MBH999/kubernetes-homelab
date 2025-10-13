@@ -1,2 +1,2 @@
 resources:
-  - web.yaml
+  - nginx-test.yaml
