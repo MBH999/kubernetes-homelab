@@ -24,13 +24,7 @@ spec:
         kind: HelmRepository
         name: cilium
         namespace: kube-system
-  values:
-    # kube-proxy is present, so do NOT replace it
-    kubeProxyReplacement: false
-    masquerade: true
-    hubble:
-      enabled: false
-      relay:
-        enabled: false
-      ui:
-        enabled: false
+  
+  valuesFrom:
+    - kind: ConfigMap
+      name: cilium-values
