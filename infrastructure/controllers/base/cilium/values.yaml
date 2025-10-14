@@ -1,4 +1,4 @@
-kubeProxyReplacement: partial
+kubeProxyReplacement: false
 masquerade: true
 hubble:
   enabled: false
