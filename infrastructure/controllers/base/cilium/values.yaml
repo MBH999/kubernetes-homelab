@@ -3,3 +3,7 @@ tunnel: vxlan
 masquerade: true
 hubble:
   enabled: false
+  relay:
+    enabled: false
+  ui:
+    enabled: false
