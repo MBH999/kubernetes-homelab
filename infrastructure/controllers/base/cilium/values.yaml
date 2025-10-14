@@ -1,7 +1,7 @@
 ipam:
   mode: kubernetes
 
-kubeProxyReplacement: true
+kubeProxyReplacement: partial
 
 securityContext:
   capabilities:
