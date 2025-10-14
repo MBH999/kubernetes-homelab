@@ -7,7 +7,7 @@ spec:
   interval: 5m
   path: ./infrastructure/controllers/overlays/talos-cluster
   prune: true
-  wait: true
+  wait: false
   timeout: 10m
   sourceRef:
     kind: GitRepository
