@@ -6,3 +6,7 @@ hubble:
     enabled: false
   ui:
     enabled: false
+securityContext: 
+  privileged: true
+ipam:
+  mode: kubernetes
