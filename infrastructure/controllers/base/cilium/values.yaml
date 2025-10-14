@@ -1,5 +1,4 @@
 kubeProxyReplacement: partial
-tunnel: vxlan
 masquerade: true
 hubble:
   enabled: false
