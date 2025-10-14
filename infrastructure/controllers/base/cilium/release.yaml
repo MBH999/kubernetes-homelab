@@ -1,11 +1,20 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
+apiVersion: helm.tookit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: cilium
   namespace: kube-system
 spec:
-  releaseName: cilium
-  interval: 15m
+  interval: 5m
+  timeout: 20m
+  install:
+    remediation:
+      retries: 3
+    crds: Create
+  upgrade:
+    remediation:
+      retries: 3
+    force: true
+    crds: Create
   chart:
     spec:
       chart: cilium
@@ -13,8 +22,14 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: cilium
-        namespace: kube-system
-
-  valuesFrom:
-    - kind: ConfigMap
-      name: cilium-values
+        namespace: flux-system
+  values:
+    # kube-proxy is present, so do NOT replace it
+    kubeProxyReplacement: false
+    masquerade: true
+    hubble:
+      enabled: false
+      relay:
+        enabled: false
+      ui:
+        enabled: false
