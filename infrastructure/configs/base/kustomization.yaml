@@ -2,3 +2,4 @@ resources:
   - cilium
   - nfs-storage-provisioner
   - external-secrets
+  - cert-manager
