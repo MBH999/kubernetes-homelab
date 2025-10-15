@@ -4,8 +4,8 @@ namespace: traefik
 resources:
   - namespace.yaml
   - wildcard-cert-cm.yaml
-  # - release.yaml
-  # - repository.yaml
+  - release.yaml
+  - repository.yaml
 
 configMapGenerator:
   - name: traefik-values

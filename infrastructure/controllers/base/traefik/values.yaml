@@ -6,29 +6,28 @@ ports:
     port: 80
     nodePort: 30000
     # Instructs this entry point to redirect all traffic to the 'websecure' entry point
-    # redirections:
-    #   entryPoint:
-    #     to: websecure
-    #     scheme: https
-    #     permanent: true
+    redirections:
+      entryPoint:
+        to: websecure
+        scheme: https
+        permanent: true
 
   # Defines the HTTPS entry point named 'websecure'
-  # websecure:
-  #   port: 443
-  #   nodePort: 30001
+  websecure:
+    port: 443
+    nodePort: 30001
 
 # Enables the dashboard in Secure Mode
 api:
   dashboard: true
-  insecure: true
+  insecure: false
 
 ingressRoute:
   dashboard:
     enabled: true
     matchRule: Host(`dashboard.mbhlabs.uk`)
     entryPoints:
-      - web
-      # - websecure
+      - websecure
     # middlewares:
     #   - name: dashboard-auth
 
@@ -74,13 +73,13 @@ gateway:
     websecure:         # HTTPS listener that matches entryPoint `websecure`
       port: 443
       protocol: HTTPS  # TLS terminates inside Traefik
-      # namespacePolicy:
-      #   from: All
-      # mode: Terminate
-      # certificateRefs:    
-      #   - kind: Secret
-      #     name: local-selfsigned-tls  # the Secret we created before the installation
-      #     group: ""
+      namespacePolicy:
+        from: All
+      mode: Terminate
+      certificateRefs:    
+        - kind: Secret
+          name: mbhlabs-uk-wildcard-cert  # the Secret we created before the installation
+          group: ""
 
 # # Enable Observability
 # logs:

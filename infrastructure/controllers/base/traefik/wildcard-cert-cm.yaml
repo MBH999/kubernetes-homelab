@@ -1,13 +1,13 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: wildcard-example-com
+  name: wildcard-mbhlabs
   namespace: traefik
 spec:
   secretName: mbhlabs-uk-wildcard-cert          # <- Traefik will read this
   issuerRef:
     kind: ClusterIssuer
-    name: letsencrypt-dns01
+    name: letsencrypt-production
   commonName: "*.mbhlabs.uk"
   dnsNames:
     - "*.mbhlabs.uk"
