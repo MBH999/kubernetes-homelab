@@ -3,8 +3,9 @@ kind: Kustomization
 namespace: traefik
 resources:
   - namespace.yaml
-  - release.yaml
-  - repository.yaml
+  - wildcard-cert-cm.yaml
+  # - release.yaml
+  # - repository.yaml
 
 configMapGenerator:
   - name: traefik-values

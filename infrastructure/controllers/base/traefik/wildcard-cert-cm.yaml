@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: wildcard-example-com
+  namespace: traefik
+spec:
+  secretName: mbhlabs-uk-wildcard-cert          # <- Traefik will read this
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-dns01
+  commonName: "*.mbhlabs.uk"
+  dnsNames:
+    - "*.mbhlabs.uk"
+    - "mbhlabs.uk"                              # include apex too
