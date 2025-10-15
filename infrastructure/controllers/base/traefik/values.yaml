@@ -13,7 +13,3 @@ gateway:
     web:
       namespacePolicy:
         from: All
-service:
-  enabled: true
-  type: LoadBalancer
-  loadBalancerClass: io.cilium/l2-announcer
