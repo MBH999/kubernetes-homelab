@@ -1,4 +1,4 @@
 resources:
   - cilium
   - nfs-storage-provisioner
-  # - external-secrets
+  - external-secrets
