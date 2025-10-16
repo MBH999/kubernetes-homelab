@@ -20,12 +20,12 @@ ports:
 # Enables the dashboard in Secure Mode
 api:
   dashboard: true
-  insecure: true
+  insecure: false
 
 ingressRoute:
   dashboard:
     enabled: true
-    matchRule: Host(`dashboard.mbhlabs.uk`)
+    matchRule: Host(`dashboard.mbhlabs.uk`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
     entryPoints:
       - websecure
     # middlewares:
