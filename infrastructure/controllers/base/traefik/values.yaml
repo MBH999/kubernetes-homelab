@@ -21,7 +21,6 @@ ports:
 api:
   dashboard: true
   insecure: true
-  debug: true
 
 ingressRoute:
   dashboard:
