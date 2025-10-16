@@ -75,12 +75,11 @@ gateway:
       protocol: HTTPS  # TLS terminates inside Traefik
       namespacePolicy:
         from: All
-      tls:
-        mode: Terminate
-        certificateRefs:    
-          - kind: Secret
-            name: mbhlabs-uk-wildcard-cert  # the Secret we created before the installation
-            group: ""
+      mode: Terminate
+      certificateRefs:    
+        - kind: Secret
+          name: mbhlabs-uk-wildcard-cert  # the Secret we created before the installation
+          group: ""
 
 # # Enable Observability
 # logs:
