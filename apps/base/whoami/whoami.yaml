@@ -1,20 +1,16 @@
+# whoami.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: whoami
-  namespace: whoami
+  namespace: default
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: whoami
+  replicas: 1
+  selector: { matchLabels: { app: whoami } }
   template:
-    metadata:
-      labels:
-        app: whoami
+    metadata: { labels: { app: whoami } }
     spec:
       containers:
-        - name: whoami
-          image: traefik/whoami
-          ports:
-            - containerPort: 80
+      - name: whoami
+        image: traefik/whoami
+        ports: [{ containerPort: 80 }]
