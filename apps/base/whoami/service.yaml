@@ -4,7 +4,7 @@ metadata:
   name: whoami
   namespace: whoami
 spec:
-  type: lusterIP
+  type: ClusterIP
   ports:
     - port: 80
   selector:
