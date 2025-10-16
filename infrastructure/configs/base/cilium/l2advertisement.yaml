@@ -4,7 +4,7 @@ metadata:
   name: l2-policy
 spec:
   # IMPORTANT: if externalIPss is desired, externalIPs.enabled=true must be set in values.yaml
-  externalIPs: true
-  loadBalancerIPs: false
+  externalIPs: false
+  loadBalancerIPs: true
   interfaces:
     - ^eth[0-9]+
