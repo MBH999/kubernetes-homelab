@@ -6,6 +6,7 @@ metadata:
 spec:
   parentRefs:
     - name: traefik-gateway # Name of the Gateway that Traefik creates when you enable the Gateway API provider
+      namespace: traefik
   hostnames:
     - "whoami.mbhlabs.uk"
   rules:
