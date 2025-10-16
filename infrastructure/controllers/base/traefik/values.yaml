@@ -20,7 +20,8 @@ ports:
 # Enables the dashboard in Secure Mode
 api:
   dashboard: true
-  insecure: false
+  insecure: true
+  debug: true
 
 ingressRoute:
   dashboard:
