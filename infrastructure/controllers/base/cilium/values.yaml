@@ -3,6 +3,9 @@ ipam:
 
 kubeProxyReplacement: false
 
+l2announcements:
+  enabled: true
+
 securityContext:
   capabilities:
     ciliumAgent:
