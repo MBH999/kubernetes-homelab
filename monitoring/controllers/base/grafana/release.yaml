@@ -37,6 +37,8 @@ spec:
       accessModes:
         - ReadWriteOnce
       size: 4Gi
+    initChownData:
+      enabled: false
 
     # plugins:
     #   - grafana-strava-datasource 1.6.1
