@@ -5,6 +5,7 @@ configMapGenerator:
   - name: default-dashboards
     files:
       - default-dashboards/15661-k8s-dashboard.json
+      - default-dashboards/cluster-total.json
     options:
       labels:
         grafana_dashboard: "1"
