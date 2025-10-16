@@ -4,10 +4,6 @@ metadata:
   name: l2-policy
   namespace: kube-system
 spec:
-  serviceSelector:
-    matchLabels:
-      cilium-lb-pool: ippool
-
   # IMPORTANT: if externalIPss is desired, externalIPs.enabled=true must be set in values.yaml
-  externalIPs: true
+  externalIPs: false
   loadBalancerIPs: true
