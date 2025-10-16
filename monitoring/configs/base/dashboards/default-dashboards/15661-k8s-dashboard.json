@@ -1,7 +1,7 @@
 {
   "__inputs": [
     {
-      "name": "DS__VICTORIAMETRICS-PROD-ALL",
+      "name": "prometheus",
       "label": "VictoriaMetrics-prod-all",
       "description": "",
       "type": "datasource",
