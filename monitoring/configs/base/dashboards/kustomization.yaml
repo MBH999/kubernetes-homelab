@@ -4,7 +4,7 @@ namespace: monitoring
 configMapGenerator:
   - name: default-dashboards
     files:
-      - standard-dashboards/2-prometheus-stats.json
+      - default-dashboards/2-prometheus-stats.json
     options:
       labels:
         grafana_dashboard: "1"
