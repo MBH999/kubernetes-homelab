@@ -4,7 +4,6 @@ metadata:
   name: uptime-kuma
   namespace: monitoring
 spec:
-  interval: 30m
   chart:
     spec:
       chart: uptime-kuma
@@ -13,26 +12,52 @@ spec:
         kind: HelmRepository
         name: uptime-kuma
         namespace: monitoring
-      interval: 12h
   values:
-    mariadb:
-      enabled: true
-      auth:
-        database: uptime_kuma
-        username: uptime_kuma
-        password: "temp"
-        rootPassword: "temp"
-    podSecurityContext:
-      fsGroup: 1000
-    securityContext:
-      capabilities:
-        drop:
-        - ALL
-      readOnlyRootFilesystem: true
-      runAsNonRoot: true
-      runAsUser: 1000
+    # --- Storage ---
     volume:
       enabled: true
       accessMode: ReadWriteOnce
       size: 4Gi
       storageClassName: nfs-client
+      # Mount the PVC at /data instead of /app/data
+      mountPath: /data
+
+    # Tell Kuma to use a subfolder inside that mount
+    env:
+      - name: DATA_DIR
+        value: /data/sub
+
+    # Make sure the subfolder exists before the app starts (non-root, PSA-safe)
+    extraInitContainers:
+      - name: ensure-subdir
+        image: busybox:1.36
+        command: ["sh","-c","mkdir -p /data/sub"]
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 1000
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["ALL"]
+        volumeMounts:
+          - name: storage    # <- this is the chart's main PVC volume name
+            mountPath: /data
+
+    # --- Pod Security (restricted:latest compliant) ---
+    podSecurityContext:
+      runAsNonRoot: true
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
+      fsGroupChangePolicy: OnRootMismatch
+      seccompProfile:
+        type: RuntimeDefault
+
+    securityContext:
+      allowPrivilegeEscalation: false
+      runAsNonRoot: true
+      capabilities:
+        drop: ["ALL"]
+
+    # (Optional) If you still hit the image's entrypoint chown, bypass it:
+    # command: ["node"]
+    # args: ["server/server.js"]
