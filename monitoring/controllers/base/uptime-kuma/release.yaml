@@ -12,6 +12,7 @@ spec:
         kind: HelmRepository
         name: uptime-kuma
         namespace: monitoring
+      interval: 12h
   values:
     # --- Storage ---
     volume:
