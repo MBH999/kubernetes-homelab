@@ -3,16 +3,17 @@ kind: HelmRelease
 metadata:
   name: uptime-kuma
   namespace: monitoring
-spec:
-  chart:
-    spec:
-      chart: uptime-kuma
-      version: "2.22.0"
-      sourceRef:
-        kind: HelmRepository
-        name: uptime-kuma
-        namespace: monitoring
-    interval: 12h
+spec: 
+  interval: 30m 
+  chart: 
+    spec: 
+      chart: uptime-kuma 
+      version: "2.22.0" 
+      sourceRef: 
+        kind: HelmRepository 
+        name: uptime-kuma 
+        namespace: monitoring 
+      interval: 12h
   values:
     # --- Storage ---
     volume:
