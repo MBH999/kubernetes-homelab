@@ -15,6 +15,8 @@ spec:
         namespace: monitoring
       interval: 12h
   values:
+    mariadb:
+      enabled: true
     podSecurityContext:
       fsGroup: 1000
     securityContext:
