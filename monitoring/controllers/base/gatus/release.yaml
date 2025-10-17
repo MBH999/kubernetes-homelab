@@ -15,4 +15,5 @@ spec:
         namespace: monitoring 
       interval: 12h
   values:
-    config: {}
+    config:
+      endpoints: {}
