@@ -14,3 +14,14 @@ spec:
         name: uptime-kuma 
         namespace: monitoring 
       interval: 12h
+  values:
+    volume:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 4Gi
+      storageClassName: nfs-client
+
+    podSecurityContext:
+      runAsNonRoot: false
+      runAsUser: 1000
+      runAsGroup: 1000
