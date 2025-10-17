@@ -34,3 +34,25 @@ spec:
           group: Homelab
           conditions:
             - "[STATUS] == 200"
+        ## Home Services
+        - name: NAS
+          url: https://nas.mbhlabs.uk
+          group: Home Services
+          conditions:
+            - "[STATUS] == 200"
+        ## Physical Devices
+        - name: Talos01
+          url: icmp://talos01.mbhlabs.uk
+          group: Physical Devices
+          conditions:
+            - "[CONNECTED] == true"
+        - name: Talos02
+          url: icmp://talos02.mbhlabs.uk
+          group: Physical Devices
+          conditions:
+            - "[CONNECTED] == true"
+        - name: Talos03
+          url: icmp://talos03.mbhlabs.uk
+          group: Physical Devices
+          conditions:
+            - "[CONNECTED] == true"
