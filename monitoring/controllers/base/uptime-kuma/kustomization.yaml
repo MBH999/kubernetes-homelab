@@ -1,3 +1,4 @@
 resources:
-  - repository.yaml
-  - release.yaml
+  - pv.yaml
+  # - repository.yaml
+  # - release.yaml
