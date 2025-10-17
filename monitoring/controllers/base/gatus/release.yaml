@@ -29,3 +29,8 @@ spec:
           group: Homelab
           conditions:
             - "[STATUS] == 200"
+        - name: Prometheus
+          url: https://kubeprom.mbhlabs.uk
+          group: Homelab
+          conditions:
+            - "[STATUS] == 200"
