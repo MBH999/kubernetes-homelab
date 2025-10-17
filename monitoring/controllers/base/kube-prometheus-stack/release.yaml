@@ -37,3 +37,5 @@ spec:
         probeSelectorNilUsesHelmValues: false
         ruleSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
+    prometheus-node-exporter:
+      namespaceOverride: node-exporter

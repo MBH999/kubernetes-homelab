@@ -14,10 +14,6 @@ spec:
         name: uptime-kuma
         namespace: monitoring
       interval: 12h
-  # install:
-  #   crds: Create
-  # upgrade:
-  #   crds: CreateReplace
   values:
     securityContext:
       capabilities:
@@ -27,4 +23,7 @@ spec:
       runAsNonRoot: true
       runAsUser: 1000
     volume:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 4Gi
       storageClassName: nfs-client
