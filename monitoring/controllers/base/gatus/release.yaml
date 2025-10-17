@@ -17,8 +17,15 @@ spec:
   values:
     config:
       endpoints:
+        ## Public
         - name: Google
           url: https://www.google.com
-          group: public
+          group: Public
+          conditions:
+            - "[STATUS] == 200"
+        ## Homelab
+        - name: Grafana
+          url: https://kubegrafana.mbhlabs.uk
+          group: Homelab
           conditions:
             - "[STATUS] == 200"
