@@ -1,4 +1,4 @@
 resources:
   - kube-prometheus-stack
   - grafana
-  # - uptime-kuma
+  - uptime-kuma
