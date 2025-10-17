@@ -19,5 +19,12 @@ spec:
   # upgrade:
   #   crds: CreateReplace
   values:
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+      readOnlyRootFilesystem: true
+      runAsNonRoot: true
+      runAsUser: 1000
     volume:
       storageClassName: nfs-client
