@@ -3,21 +3,22 @@ kind: HelmRelease
 metadata:
   name: gatus
   namespace: monitoring
-spec: 
-  interval: 30m 
-  chart: 
-    spec: 
+spec:
+  interval: 30m
+  chart:
+    spec:
       chart: gatus
       version: "1.4.3"
-      sourceRef: 
-        kind: HelmRepository 
+      sourceRef:
+        kind: HelmRepository
         name: twin
-        namespace: monitoring 
+        namespace: monitoring
       interval: 12h
   values:
     config:
       endpoints:
         - name: Google
           url: https://www.google.com
+          group: public
           conditions:
-            - '[STATUS] == 200'
+            - "[STATUS] == 200"
