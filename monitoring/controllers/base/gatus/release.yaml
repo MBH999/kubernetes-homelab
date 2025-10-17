@@ -14,3 +14,5 @@ spec:
         name: twin
         namespace: monitoring 
       interval: 12h
+  values:
+    config: {}
