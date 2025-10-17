@@ -17,6 +17,11 @@ spec:
   values:
     mariadb:
       enabled: true
+      auth:
+        database: uptime_kuma
+        username: uptime_kuma
+        password: "temp"
+        rootPassword: "temp"
     podSecurityContext:
       fsGroup: 1000
     securityContext:
