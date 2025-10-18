@@ -1,3 +1,4 @@
+namespace: homepage
 resources:
   - service-account.yaml
   - secret.yaml
