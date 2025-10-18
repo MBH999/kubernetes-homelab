@@ -24,11 +24,20 @@ data:
         - Traefik Dashboard:
             href: https://dashboard.mbhlabs.uk/dashboard/
             description: Traefik UI Dashboard
+        - Unifi Dashboard
+            href: https://unifi.ui.com
+            description: Unifi Console
 
     - Monitoring:
         - Grafana:
             href: https://kubegrafana.mbhlabs.uk
             description: Grafana Monitoring Dashboard
+        - Gatus
+            href: https://gatus.mbhlabs.uk
+            description: Gatus Uptime Monitoring
+        - Prometheus
+            href: https://kubeprom.mbhlabs.uk
+            description: Prometheus Dashboard
 
     - Storage:
         - UGreen NAS:
