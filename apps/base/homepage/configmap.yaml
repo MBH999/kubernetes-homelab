@@ -20,20 +20,20 @@ data:
             - abbr: GH
               href: https://github.com/
   services.yaml: |
-    - My First Group:
-        - My First Service:
-            href: http://localhost/
-            description: Homepage is awesome
+    - Network Tools:
+        - Traefik Dashboard:
+            href: https://dashboard.mbhlabs.uk/dashboard/
+            description: Traefik UI Dashboard
 
-    - My Second Group:
-        - My Second Service:
-            href: http://localhost/
-            description: Homepage is the best
+    - Monitoring:
+        - Grafana:
+            href: https://kubegrafana.mbhlabs.uk
+            description: Grafana Monitoring Dashboard
 
-    - My Third Group:
-        - My Third Service:
-            href: http://localhost/
-            description: Homepage is 😎
+    - Storage:
+        - UGreen NAS:
+            href: https://nas.mbhlabs.uk
+            description: NAS UI
   widgets.yaml: |
     - kubernetes:
         cluster:
