@@ -7,3 +7,4 @@ resources:
   - clusterrole.yaml
   - service.yaml
   - deployment.yaml
+  - ingress-route.yaml
