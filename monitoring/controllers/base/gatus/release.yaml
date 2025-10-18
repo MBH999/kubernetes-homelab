@@ -15,9 +15,8 @@ spec:
         namespace: monitoring
       interval: 12h
   values:
-    persistence:
+    serviceMonitor:
       enabled: true
-      storageClassName: nfs-client
     config:
       endpoints:
         ## Public
