@@ -32,10 +32,10 @@ data:
         - Grafana:
             href: https://kubegrafana.mbhlabs.uk
             description: Grafana Monitoring Dashboard
-        - Gatus
+        - Gatus:
             href: https://gatus.mbhlabs.uk
             description: Gatus Uptime Monitoring
-        - Prometheus
+        - Prometheus:
             href: https://kubeprom.mbhlabs.uk
             description: Prometheus Dashboard
 
