@@ -1,5 +1,6 @@
 namespace: homepage
 resources:
+  - namespace.yaml
   - service-account.yaml
   - secret.yaml
   - configmap.yaml
