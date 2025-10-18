@@ -24,7 +24,7 @@ data:
         - Traefik Dashboard:
             href: https://dashboard.mbhlabs.uk/dashboard/
             description: Traefik UI Dashboard
-        - Unifi Dashboard
+        - Unifi Dashboard:
             href: https://unifi.ui.com
             description: Unifi Console
 
