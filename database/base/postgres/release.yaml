@@ -10,7 +10,7 @@ spec:
       chart: postgresql
       version: "18.0.17"
       sourceRef:
-        kind: HelmRepository
+        kind: OCIRepository
         name: bitnami
         namespace: database
       interval: 12h
