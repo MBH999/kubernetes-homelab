@@ -7,7 +7,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: pgAdmin
+      chart: pgadmin4
       version: "1.50.0"
       sourceRef:
         kind: HelmRepository
