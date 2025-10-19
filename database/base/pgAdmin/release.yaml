@@ -12,5 +12,5 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: pgadmin4
-        namespace: datanase
+        namespace: database
       interval: 12h
