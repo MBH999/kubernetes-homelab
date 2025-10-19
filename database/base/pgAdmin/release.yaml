@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pgAdmin
+  namespace: database
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: pgAdmin
+      version: "1.50.0"
+      sourceRef:
+        kind: HelmRepository
+        name: pgAdmin
+        namespace: datanase
+      interval: 12h
