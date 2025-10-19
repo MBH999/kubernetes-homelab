@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: pgAdmin
+  name: pgadmin4
   namespace: database
 spec:
   interval: 24h
