@@ -9,3 +9,6 @@ spec:
     kind: OCIRepository
     name: postgresql
     namespace: database
+  spec:
+    global:
+      defaultStorageClass: nfs-client
