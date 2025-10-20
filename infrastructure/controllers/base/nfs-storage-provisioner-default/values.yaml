@@ -4,4 +4,5 @@ storageClass:
 nfs:
   server: 192.168.10.5
   path: /volume2/talos-cluster
-  mountOptions: "nfsvers=4"
+  mountOptions:
+    - nfsvers=4
