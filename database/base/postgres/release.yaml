@@ -12,3 +12,4 @@ spec:
   values:
     global:
       defaultStorageClass: nfs-client
+      storageClass: nfs-client
