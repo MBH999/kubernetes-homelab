@@ -1,5 +1,6 @@
 resources:
   - cilium
+  - nfs-storage-provisioner-default
   - external-secrets
   - cert-manager
   - traefik

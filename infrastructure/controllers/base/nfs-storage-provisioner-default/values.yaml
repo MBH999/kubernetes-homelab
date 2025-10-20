@@ -1,0 +1,7 @@
+storageClass:
+  name: nfs-client-default
+  defaultClass: true
+nfs:
+  server: 192.168.10.5
+  path: /volume2/talos-cluster
+  mountOptions: "nfsvers=4"
