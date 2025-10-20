@@ -9,7 +9,8 @@ spec:
     kind: OCIRepository
     name: postgresql
     namespace: database
-  upgrade: force
+  upgrade: 
+    force: true
   values:
     global:
       defaultStorageClass: nfs-client
