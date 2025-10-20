@@ -9,7 +9,7 @@ spec:
     kind: OCIRepository
     name: postgresql
     namespace: database
-  upgrade: 
+  upgrade:
     force: true
   values:
     global:
