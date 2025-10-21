@@ -11,7 +11,3 @@ spec:
     namespace: database
   upgrade:
     force: true
-  values:
-    global:
-      defaultStorageClass: nfs-client
-      storageClass: nfs-client
