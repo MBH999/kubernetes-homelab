@@ -20,3 +20,9 @@ talos03.mbhlab.uk - HP EliteDesk 800G3 Mini - i5 / 32gb RAM - Worker Node
 
 
 ### Monitoring
+
+
+- [] RBAC
+- [] Prometheus Service Discovery
+- [] Custom Ping/Tcp etc monitor
+- [] Loki / Promtail
