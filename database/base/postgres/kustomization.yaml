@@ -4,3 +4,4 @@ namespace: database
 resources:
   - configmap.yaml
   - pvc.yaml
+  - deployment.yaml
