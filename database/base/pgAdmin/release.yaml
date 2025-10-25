@@ -14,7 +14,3 @@ spec:
         name: pgadmin4
         namespace: database
       interval: 12h
-  values:
-    persistentVolume:
-      enabled: true
-      storageClass: nfs-client
