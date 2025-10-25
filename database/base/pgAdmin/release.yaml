@@ -14,3 +14,5 @@ spec:
         name: pgadmin4
         namespace: database
       interval: 12h
+      upgrade:
+        force: true
