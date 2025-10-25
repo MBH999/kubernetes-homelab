@@ -5,6 +5,8 @@ metadata:
   namespace: database
 spec:
   interval: 30m
+  upgrade:
+    force: true
   chart:
     spec:
       chart: pgadmin4
@@ -14,5 +16,4 @@ spec:
         name: pgadmin4
         namespace: database
       interval: 12h
-      upgrade:
-        force: true
+
