@@ -2,4 +2,3 @@ resources:
   - kube-prometheus-stack
   - grafana
   - gatus
-  - uptime-kuma
