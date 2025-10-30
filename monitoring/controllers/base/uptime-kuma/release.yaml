@@ -14,8 +14,8 @@ spec:
         name: uptime-kuma
         namespace: monitoring
       interval: 12h
-  values:
-    podSecurityContext:
-      fsGroup: 1000
-    securityContext:
-      runAsUser: 1000
+  # values:
+  #   podSecurityContext:
+  #     fsGroup: 1000
+  #   securityContext:
+  #     runAsUser: 1000
