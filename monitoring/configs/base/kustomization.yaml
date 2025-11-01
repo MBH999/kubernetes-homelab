@@ -3,4 +3,3 @@ resources:
   - grafana
   - dashboards
   - gatus
-  - uptime-kuma
