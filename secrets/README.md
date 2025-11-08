@@ -15,17 +15,20 @@ This repository uses **SOPS** to encrypt Kubernetes secrets and **Flux** to auto
 ## Initial Setup
 
 1. **Generate an age key:**
+
    ```bash
    age-keygen -o age.key
    ```
 
 2. **Create the Flux decryption secret:**
+
    ```bash
    kubectl -n flux-system create secret generic sops-age \
      --from-file=age.agekey=age.key
    ```
 
 3. **Add your public key to `.sops.yaml`:**
+
    ```yaml
    creation_rules:
      - path_regex: secrets/.*\.sops\.ya?ml
@@ -42,7 +45,6 @@ This repository uses **SOPS** to encrypt Kubernetes secrets and **Flux** to auto
 
 1. **Create or edit a file under `secrets/`, e.g.:**
 
-
 ```yaml
 apiVersion: v1
 kind: Secret
@@ -55,7 +57,6 @@ stringData:
   ClientSecret: "<Secret>"
 ```
 
-
 sops --encrypt --in-place secrets/azure-creds.secret.sops.yaml
 git add secrets/azure-creds.secret.sops.yaml
 git push
@@ -64,11 +65,13 @@ sops --reencrypt --in-place -r secrets/
 kubectl -n flux-system create secret generic sops-age \
 
 2. **Encrypt the secret:**
+
   ```bash
   sops --encrypt --in-place secrets/azure-creds.secret.sops.yaml
   ```
 
 3. **Commit and push the change:**
+
   ```bash
   git add secrets/azure-creds.secret.sops.yaml
   git commit -m "Update Azure creds"
@@ -82,11 +85,13 @@ kubectl -n flux-system create secret generic sops-age \
 ## Checking Secrets
 
 **Force Flux to sync:**
+
 ```bash
 flux reconcile kustomization secrets -n flux-system --with-source
 ```
 
 **Confirm the secret exists:**
+
 ```bash
 kubectl -n external-secrets get secret azure-creds
 ```
@@ -96,6 +101,7 @@ kubectl -n external-secrets get secret azure-creds
 ## Rotating the Age Key
 
 1. **Generate a new key:**
+
   ```bash
   age-keygen -o new-age.key
   ```
@@ -103,11 +109,13 @@ kubectl -n external-secrets get secret azure-creds
 2. **Add the new public key to `.sops.yaml`.**
 
 3. **Re-encrypt all secrets:**
+
   ```bash
   sops --reencrypt --in-place -r secrets/
   ```
 
 4. **Update Flux’s secret:**
+
   ```bash
   kubectl -n flux-system create secret generic sops-age \
     --from-file=age.agekey=new-age.key --dry-run=client -o yaml | kubectl apply -f -
