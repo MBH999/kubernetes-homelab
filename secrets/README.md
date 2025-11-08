@@ -1,14 +1,16 @@
 
 # 🔐 Secrets Management with SOPS & Flux
 
-This repository uses **SOPS** to encrypt Kubernetes secrets and **Flux** to automatically decrypt and apply them to your cluster.
+This repository uses **SOPS** to encrypt Kubernetes secrets and **Flux** to automatically decrypt and apply them to
+your cluster.
 
 ---
 
 ## How It Works
 
 - Secrets are stored in the `secrets/` folder, encrypted with SOPS using an **age key**.
-- Flux uses a private key stored in the `sops-age` secret (in the `flux-system` namespace) to decrypt secrets when applying manifests.
+- Flux uses a private key stored in the `sops-age` secret (in the `flux-system` namespace) to decrypt secrets when
+applying manifests.
 
 ---
 
@@ -45,38 +47,40 @@ This repository uses **SOPS** to encrypt Kubernetes secrets and **Flux** to auto
 
 1. **Create or edit a file under `secrets/`, e.g.:**
 
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: azure-creds
-  namespace: external-secrets
-type: Opaque
-stringData:
-  ClientID: "<Azure App ID>"
-  ClientSecret: "<Secret>"
-```
+    ```yaml
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: azure-creds
+      namespace: external-secrets
+    type: Opaque
+    stringData:
+      ClientID: "<Azure App ID>"
+      ClientSecret: "<Secret>"
+    ```
 
-sops --encrypt --in-place secrets/azure-creds.secret.sops.yaml
-git add secrets/azure-creds.secret.sops.yaml
-git push
-age-keygen -o new-age.key
-sops --reencrypt --in-place -r secrets/
-kubectl -n flux-system create secret generic sops-age \
+    ```bash
+    sops --encrypt --in-place secrets/azure-creds.secret.sops.yaml
+    git add secrets/azure-creds.secret.sops.yaml
+    git push
+    age-keygen -o new-age.key
+    sops --reencrypt --in-place -r secrets/
+    kubectl -n flux-system create secret generic sops-age \
+    ```
 
 2. **Encrypt the secret:**
 
-  ```bash
-  sops --encrypt --in-place secrets/azure-creds.secret.sops.yaml
-  ```
+    ```bash
+    sops --encrypt --in-place secrets/azure-creds.secret.sops.yaml
+    ```
 
 3. **Commit and push the change:**
 
-  ```bash
-  git add secrets/azure-creds.secret.sops.yaml
-  git commit -m "Update Azure creds"
-  git push
-  ```
+    ```bash
+    git add secrets/azure-creds.secret.sops.yaml
+    git commit -m "Update Azure creds"
+    git push
+    ```
 
 4. **Flux will automatically decrypt and apply the secret.**
 
@@ -102,24 +106,24 @@ kubectl -n external-secrets get secret azure-creds
 
 1. **Generate a new key:**
 
-  ```bash
-  age-keygen -o new-age.key
-  ```
+    ```bash
+    age-keygen -o new-age.key
+    ```
 
 2. **Add the new public key to `.sops.yaml`.**
 
 3. **Re-encrypt all secrets:**
 
-  ```bash
-  sops --reencrypt --in-place -r secrets/
-  ```
+    ```bash
+    sops --reencrypt --in-place -r secrets/
+    ```
 
 4. **Update Flux’s secret:**
 
-  ```bash
-  kubectl -n flux-system create secret generic sops-age \
-    --from-file=age.agekey=new-age.key --dry-run=client -o yaml | kubectl apply -f -
-  ```
+    ```bash
+    kubectl -n flux-system create secret generic sops-age \
+      --from-file=age.agekey=new-age.key --dry-run=client -o yaml | kubectl apply -f -
+    ```
 
 ---
 
