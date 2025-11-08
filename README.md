@@ -30,4 +30,4 @@ talos03.mbhlab.uk - HP EliteDesk 800G3 Mini - i5 / 32gb RAM - Worker Node
 ### Tips / Useful Commands
 
 - Force update an external secret 
-```kubectl annotate externalsecrets external-secret-name -n namespace force-sync=(date +%s) --overwrite```
+    - ```kubectl annotate externalsecrets external-secret-name -n namespace force-sync=(date +%s) --overwrite```
