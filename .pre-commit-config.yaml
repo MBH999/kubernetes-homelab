@@ -6,6 +6,10 @@ repos:
         args: ["--allow-multiple-documents"]
       - id: end-of-file-fixer
 
+  - repo: https://github.com/thoughtworks/talisman
+    rev: 'v1.37.0'  # Update me!
+    hooks:
+      - id: talisman-commit
 
   - repo: https://github.com/DavidAnson/markdownlint-cli2
     rev: v0.13.0  # or latest
