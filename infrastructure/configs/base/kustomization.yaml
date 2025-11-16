@@ -3,3 +3,4 @@ resources:
   - nfs-storage-provisioner
   - external-secrets
   - cert-manager
+  - longhorn
