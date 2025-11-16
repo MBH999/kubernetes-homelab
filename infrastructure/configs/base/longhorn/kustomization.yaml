@@ -1,4 +1,0 @@
-namespace: longhorn-system
-resources:
-  - middleware.yaml
-  - ingress-route.yaml
