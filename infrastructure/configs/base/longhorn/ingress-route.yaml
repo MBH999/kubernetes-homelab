@@ -4,7 +4,6 @@ kind: HTTPRoute
 metadata:
   name: longhorn-ingress
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls: "true"       
     traefik.ingress.kubernetes.io/router.middlewares: longhorn-system-svc-longhorn-headers@kubernetescrd
 spec:
@@ -16,7 +15,7 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /                # match everything
+            value: /
       backendRefs:
-        - name: longhorn-frontend   # svc in longhorn-system
+        - name: longhorn-frontend
           port: 80
