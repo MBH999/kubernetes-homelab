@@ -13,6 +13,10 @@ spec:
       namespace: traefik
   hostnames: ["longhorn.mbhlabs.uk"]
   rules:
-    - backendRefs:
-        - name: longhorn-frontend
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /                # match everything
+      backendRefs:
+        - name: longhorn-frontend   # svc in longhorn-system
           port: 80
