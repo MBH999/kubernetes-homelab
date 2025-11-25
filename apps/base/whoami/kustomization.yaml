@@ -1,6 +1,0 @@
-namespace: whoami
-resources:
-  - namespace.yaml
-  - whoami.yaml
-  - service.yaml
-  - ingress-route.yaml
