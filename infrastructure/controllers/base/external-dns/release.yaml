@@ -1,0 +1,32 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: external-dns
+  namespace: external-dns
+spec:
+  provider:
+    name: webhook
+    webhook:
+      image:
+        repository: ghcr.io/lexfrei/external-dns-unifios-webhook
+        tag: latest  # Recommended: pin to a specific version (e.g., v1.0.0)
+      env:
+        - name: WEBHOOK_UNIFI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: unifi-api-key
+              key: unifi-api-key
+        - name: WEBHOOK_UNIFI_HOST
+          value: "https://192.168.1.1"
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: 8080
+        initialDelaySeconds: 10
+        periodSeconds: 10
+      readinessProbe:
+        httpGet:
+          path: /readyz
+          port: 8080
+        initialDelaySeconds: 10
+        periodSeconds: 10
