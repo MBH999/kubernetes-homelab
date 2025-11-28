@@ -6,6 +6,7 @@ configMapGenerator:
     files:
       - default-dashboards/15661-k8s-dashboard.json
       - default-dashboards/k8s-resources-cluster.json
+      - default-dashboards/basic-kube-dashboard.json
     options:
       labels:
         grafana_dashboard: "1"
