@@ -16,12 +16,12 @@ spec:
       interval: 12h
   values:
     podSecurityContext:
-      runAsNonRoot: true
+      runAsNonRoot: false
       seccompProfile:
         type: RuntimeDefault
 
     securityContext:
-      runAsNonRoot: true
+      runAsNonRoot: false
       allowPrivilegeEscalation: false
       capabilities:
         drop:
