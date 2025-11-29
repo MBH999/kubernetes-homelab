@@ -16,8 +16,13 @@ spec:
       interval: 12h
   values:
     podSecurityContext:
-      fsGroup: 1000
-      fsGroupChangePolicy: OnRootMismatch
-    securityContext:
-      runAsUser: 1000
+      runAsNonRoot: true
+      seccompProfile:
+        type: RuntimeDefault
 
+    securityContext:
+      runAsNonRoot: true
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+          - ALL
