@@ -15,13 +15,8 @@ spec:
         namespace: monitoring
       interval: 12h
   values:
-    podSecurityContext:
+    securityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
       fsGroup: 1000
-
-    # securityContext:
-    #   capabilities:
-    #     drop:
-    #     - ALL
-    #   readOnlyRootFilesystem: true
-    #   runAsNonRoot: true
-    #   runAsUser: 1000
+      fsGroupChangePolicy: OnRootMismatch
