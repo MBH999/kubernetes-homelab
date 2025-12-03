@@ -4,7 +4,7 @@ metadata:
   name: uptime-kuma-tcp
   namespace: monitoring
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - name: web-ui
     protocol: TCP
