@@ -18,21 +18,16 @@ spec:
       labels:
         app: uptime-kuma
     spec:
-      securityContext:
-        runAsUser: 1000
-        runAsGroup: 1000
-        fsGroup: 1000
-        fsGroupChangePolicy: OnRootMismatch
       containers:
       - name: uptime-kuma
         image: louislam/uptime-kuma:1
         imagePullPolicy: IfNotPresent
-        # env:
-        # # only need to set PUID and PGUI because of NFS server
-        # - name: PUID
-        #   value: "1000"
-        # - name: PGID
-        #   value: "1000"
+        env:
+        # only need to set PUID and PGUI because of NFS server
+        - name: PUID
+          value: "1000"
+        - name: PGID
+          value: "10"
         ports:
         - containerPort: 3001
           name: web-ui
