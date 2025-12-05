@@ -17,6 +17,9 @@ spec:
   values:
     serviceMonitor:
       enabled: true
+    persistence:
+      enable: true
+      size: 1Gi
     config:
       endpoints:
         ## Public
