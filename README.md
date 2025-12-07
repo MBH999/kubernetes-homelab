@@ -10,20 +10,21 @@ talos03.mbhlab.uk - HP EliteDesk 800G3 Mini - i5 / 32gb RAM - Worker Node
 
 ### Infrastructure
 
-|App|Usage|Link|
-|---|-----|----|
-|Cilium|CNI|Link|
-<!-- |
-|
-|
-| -->
+#### Ingress / Networking
+
+- [X] Traefik
+- [X] Cilium
+
+#### Storage
+
+- [X] NFS Storage Provisioner
+
+#### Security
+
+- [X] Cert Manager
+- [X] External Secrets Operator
 
 ### Monitoring
-
-- [ ] RBAC
-- [ ] Prometheus Service Discovery
-- [ ] Custom Ping/Tcp etc monitor
-- [ ] Loki / Promtail
 
 ### Tips / Useful Commands
 
