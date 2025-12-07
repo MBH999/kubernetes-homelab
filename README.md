@@ -26,6 +26,22 @@ talos03.mbhlab.uk - HP EliteDesk 800G3 Mini - i5 / 32gb RAM - Worker Node
 
 ### Monitoring
 
+#### Dashboards
+
+- [X] Grafana
+
+#### Uptime Monitoring
+
+- [X] Gatus
+
+#### Collectors
+
+- [X] Kube-prometheus-stack
+
+### Applications
+
+- [X] Homepage
+
 ### Tips / Useful Commands
 
 - Force update an external secret
