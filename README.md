@@ -23,6 +23,7 @@ talos03.mbhlab.uk - HP EliteDesk 800G3 Mini - i5 / 32gb RAM - Worker Node
 
 - [X] Cert Manager
 - [X] External Secrets Operator
+- [] Authentik
 
 ### Monitoring
 
@@ -41,6 +42,12 @@ talos03.mbhlab.uk - HP EliteDesk 800G3 Mini - i5 / 32gb RAM - Worker Node
 ### Applications
 
 - [X] Homepage
+- [] Home Assistant
+- [] LazyLibrarian
+- [] Domain Locker
+- [] MyFin Budget
+- [] Immich?
+- [] Version Checker
 
 ### Tips / Useful Commands
 

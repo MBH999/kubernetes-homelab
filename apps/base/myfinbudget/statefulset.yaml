@@ -1,0 +1,28 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: myfinbudget
+  namespace: myfinbudget
+spec:
+  selector:
+    matchLabels:
+      app: myfinbudget # has to match .spec.template.metadata.labels
+  serviceName: "myfinbudget"
+  replicas: 1 # by default is 1
+  template:
+    metadata:
+      labels:
+        app: myfinbudget # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: database
+        image: mysql:8.4
+        ports:
+        - containerPort: 3306
+          name: myfinbudget-database
+        volumeMounts:
+        - name: myfinbudget-database
+          mountPath: /var/lib/mysql
+

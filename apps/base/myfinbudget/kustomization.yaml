@@ -1,0 +1,5 @@
+namespace: homepage
+resources:
+  - namespace.yaml
+  - pvc.yaml
+  - statefulset.yaml
