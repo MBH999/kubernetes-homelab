@@ -21,7 +21,7 @@ spec:
         image: mysql:8.4
         ports:
         - containerPort: 3306
-          name: myfinbudget-database
+          name: myfinbudget-db
         volumeMounts:
         - name: myfinbudget-db
           mountPath: /var/lib/mysql
