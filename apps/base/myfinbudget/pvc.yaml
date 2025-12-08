@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: myfinbudget-database
+  name: myfinbudget-db
   namespace: myfinbudget
   labels:
-    app: myfinbudget-database
+    app: myfinbudget
 spec:
   accessModes:
   - ReadWriteOnce

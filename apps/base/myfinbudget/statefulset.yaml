@@ -23,6 +23,6 @@ spec:
         - containerPort: 3306
           name: myfinbudget-database
         volumeMounts:
-        - name: myfinbudget-database
+        - name: myfinbudget-db
           mountPath: /var/lib/mysql
 
