@@ -1,4 +1,15 @@
-# https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: myfinbudget-pv
+  namespace: myfinbudget
+spec:
+  capacity:
+   storage: 2Gi
+  accessModes:
+   - ReadWriteOnce
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
